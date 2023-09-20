@@ -4,6 +4,9 @@ import Guidelines from '@/components/Home/Guidelines';
 import JudgingCriteria from '@/components/Home/JudgingCriteria';
 import Faq from '@/components/Home/Faq';
 import Timeline from '@/components/Home/Timeline';
+import Prizes from '@/components/Home/Prizes';
+import PartnersAndSponsors from '@/components/Home/PartnersAndSponsors';
+import PrivacyPolicy from '@/components/Home/PrivacyPolicy';
 
 const index = () => {
   return (
@@ -25,6 +28,15 @@ const index = () => {
       </div>
       <div className='px-7'>
         <Timeline />
+      </div>
+      <div className='px-7'>
+        <Prizes />
+      </div>
+      <div className='px-7'>
+        <PartnersAndSponsors />
+      </div>
+      <div className='px-7'>
+        <PrivacyPolicy />
       </div>
     </div>
   );
