@@ -1,6 +1,7 @@
 import { Form, Formik } from 'formik';
 import InputBox from '../Input/InputBox';
 import TextArea from '../Input/TextArea';
+import { ContactSchema, initialContactValues } from '@/schema/contact.schema';
 
 const ContactForm = () => {
   const handleSubmit = () => {};
@@ -9,19 +10,11 @@ const ContactForm = () => {
     <div>
       <Formik
         onSubmit={handleSubmit}
-        validationSchema={WithdrawalSchema}
+        validationSchema={ContactSchema}
         enableReinitialize
-        initialValues={initialWithdrawalValues}
+        initialValues={initialContactValues}
       >
-        {({
-          values,
-          setFieldTouched,
-          isValid,
-          setFieldValue,
-          errors,
-          handleSubmit,
-          ...formik
-        }) => (
+        {({ values, setFieldTouched, errors }) => (
           <Form>
             <div className='flex flex-col gap-6'>
               <InputBox

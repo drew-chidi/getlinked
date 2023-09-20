@@ -24,10 +24,10 @@ const TextArea = ({
         column={30}
         name={name}
         value={value || ''}
-        onKeyUp={(e) => {
+        onKeyUp={() => {
           setFieldTouched(name, true);
         }}
-        className='border border-input rounded-md px-[13px] py-3 outline-0'
+        className='bg-transparent shadow-input border border-white rounded-[4px] px-6 py-3.5 outline-0 text-white '
         type={type}
         id={id}
         placeholder={placeholder}
