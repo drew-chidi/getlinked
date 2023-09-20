@@ -1,11 +1,14 @@
-import { Formik } from 'formik';
-import { Form } from 'react-router-dom';
+import { Formik, Form } from 'formik';
 import InputBox from '../Input/InputBox';
-import TextArea from '../Input/TextArea';
 import {
   RegisterSchema,
   initialRegisterValues,
 } from '@/schema/register.schema';
+import InputSelect from '../Input/InputSelect';
+import InputCheckbox from '../Input/InputCheckbox';
+
+const categoryOptions = ['Category 1', 'Category 2'];
+const groupSize = ['1', '2'];
 
 const RegisterForm = () => {
   const handleSubmit = () => {};
@@ -31,8 +34,8 @@ const RegisterForm = () => {
                 setFieldTouched={setFieldTouched}
               />
               <InputBox
-                placeholder={'Enter your phone number'}
                 label={'Phone'}
+                placeholder={'Enter your phone number'}
                 id={'phone'}
                 name={'phone'}
                 value={values?.phone}
@@ -58,21 +61,47 @@ const RegisterForm = () => {
                 isValid={values?.topic && !errors?.topic}
                 setFieldTouched={setFieldTouched}
               />
-              <TextArea
-                placeholder={'Message'}
-                type={'message'}
-                id={'message'}
-                name={'message'}
-                value={values?.message}
-                isValid={values?.message && !errors?.message}
-                setFieldTouched={setFieldTouched}
-              />
+              <div>
+                <div>
+                  <InputSelect
+                    label={'Category'}
+                    placeholder={'What is your group project topic?'}
+                    id={'category'}
+                    name={'category'}
+                    value={values?.category}
+                    isValid={values?.category && !errors?.category}
+                    setFieldTouched={setFieldTouched}
+                    options={categoryOptions}
+                  />
+                </div>
+                <div>
+                  <InputSelect
+                    label={'Group Size'}
+                    placeholder={'What is your group project topic?'}
+                    id={'group_size'}
+                    name={'group_size'}
+                    value={values?.group_size}
+                    isValid={values?.group_size && !errors?.group_size}
+                    setFieldTouched={setFieldTouched}
+                    options={groupSize}
+                  />
+                </div>
+              </div>
             </div>
             <p className='text-[0.5625rem] text-purple-50 mt-4 mb-3'>
               Please review your registration details before submitting
             </p>
             {/* Terms and Conditions */}
-            <div></div>
+            <div>
+              <InputCheckbox
+                title='I agreed with the event terms and conditions and privacy policy'
+                id={'terms'}
+                name={'terms'}
+                value={values?.terms}
+                isValid={values?.terms && !errors?.terms}
+                setFieldTouched={setFieldTouched}
+              />
+            </div>
             {/* button here */}
           </Form>
         )}
