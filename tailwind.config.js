@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         primary: 'linear-gradient(270deg, #903AFF 0%, #FE34B9 100%)',
+        'purple-50': '#D434FE',
       },
       fontFamily: {
         sans: ['Montserrat', 'sans-serif'],

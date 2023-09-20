@@ -1,10 +1,12 @@
 import Chain from '@/assets/images/chain.png';
 import Blast from '@/assets/images/blast.png';
+import Man from '@/assets/images/man-wearing-glasses.png';
+import Globe from '@/assets/images/connected-globe.png';
 
 const Hero = () => {
   return (
     <section id='hero'>
-      <div className='text-center pt-7'>
+      <div className='text-center pt-7 mb-[26px] lg:mb-0'>
         <div>
           <p className='font-bold italic'>
             Igniting a Revolution in HR Innovation
@@ -41,6 +43,22 @@ const Hero = () => {
           <div className=''>
             <span className='text-5xl leading-[63.84px]'>00</span>
             <span className='text-sm font-sans'>S</span>
+          </div>
+        </div>
+      </div>
+      {/* HERO IMAGE */}
+      <div>
+        <div className='relative w-[390px] h-[362px]'>
+          {/* Larger image at the bottom */}
+          <img
+            src={Man}
+            alt='Large Image'
+            className='w-full h-full object-coveuior'
+          />
+
+          {/* Smaller image centered on top */}
+          <div className='w-4/5 absolute inset-0 m-auto'>
+            <img src={Globe} alt='Small Image' className='' />
           </div>
         </div>
       </div>
