@@ -6,12 +6,21 @@ import {
 } from '@/schema/register.schema';
 import InputSelect from '../Input/InputSelect';
 import InputCheckbox from '../Input/InputCheckbox';
+import Button from '../Button/Button';
+import { useState } from 'react';
 
 const categoryOptions = ['Category 1', 'Category 2'];
 const groupSize = ['1', '2'];
 
 const RegisterForm = () => {
-  const handleSubmit = () => {};
+  const [, setOption] = useState('');
+
+  const handleOption = (value) => {
+    setOption(value);
+  };
+  const handleSubmit = () => {
+    console.log('eueui');
+  };
 
   return (
     <div>
@@ -21,7 +30,15 @@ const RegisterForm = () => {
         enableReinitialize
         initialValues={initialRegisterValues}
       >
-        {({ values, setFieldTouched, errors }) => (
+        {({
+          values,
+          setFieldTouched,
+          isValid,
+          setFieldValue,
+          errors,
+          handleSubmit,
+          ...formik
+        }) => (
           <Form>
             <div className='flex flex-col gap-6'>
               <InputBox
@@ -61,23 +78,25 @@ const RegisterForm = () => {
                 isValid={values?.topic && !errors?.topic}
                 setFieldTouched={setFieldTouched}
               />
-              <div>
-                <div>
+              <div className='flex gap-5 w-full'>
+                <div className='w-[64%]'>
                   <InputSelect
                     label={'Category'}
-                    placeholder={'What is your group project topic?'}
+                    placeholder={'Select your category?'}
                     id={'category'}
                     name={'category'}
                     value={values?.category}
                     isValid={values?.category && !errors?.category}
                     setFieldTouched={setFieldTouched}
                     options={categoryOptions}
+                    handleSubmit={handleSubmit}
+                    setOption={handleOption}
                   />
                 </div>
-                <div>
+                <div className='w-[36%]'>
                   <InputSelect
                     label={'Group Size'}
-                    placeholder={'What is your group project topic?'}
+                    placeholder={'Select'}
                     id={'group_size'}
                     name={'group_size'}
                     value={values?.group_size}
@@ -103,6 +122,9 @@ const RegisterForm = () => {
               />
             </div>
             {/* button here */}
+            <div className='text-center'>
+              <Button type='submit'>Submit</Button>
+            </div>
           </Form>
         )}
       </Formik>

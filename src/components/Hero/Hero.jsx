@@ -2,15 +2,19 @@ import Chain from '@/assets/images/chain.png';
 import Blast from '@/assets/images/blast.png';
 import Man from '@/assets/images/man-wearing-glasses.png';
 import Globe from '@/assets/images/connected-globe.png';
+import Line from '@/assets/images/line.png';
 
 const Hero = () => {
   return (
     <section id='hero'>
       <div className='text-center pt-7 mb-[26px] lg:mb-0'>
-        <div>
+        <div className='relative'>
           <p className='font-bold italic'>
             Igniting a Revolution in HR Innovation
           </p>
+          <div className='absolute right-9'>
+            <img src={Line} />
+          </div>
         </div>
         <div className='text-center font-display text-[2rem] font-bold mt-10'>
           <p className='leading-normal'>getlinked Tech</p>

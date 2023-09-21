@@ -14,7 +14,7 @@ const InputSelect = ({
     <div className='flex flex-col'>
       <label
         htmlFor={id}
-        className='text-sm lg:text-base mb-[3px] inline-block  dark:text-neutral-200  text-[#575555]'
+        className='text-sm lg:text-base mb-1.5 inline-block  dark:text-neutral-200  text-[#575555]'
       >
         {label || ''}
       </label>
@@ -24,7 +24,7 @@ const InputSelect = ({
         name={name}
         value={value}
         {...rest}
-        className='border border-input rounded-md px-[13px] py-3 outline-0 text-[#575555] leading-8'
+        className='border border-input rounded-md px-[13px] py-3 outline-0 text-white leading-8 bg-transparent text-sm'
         onChange={(event) => {
           setOption && setOption(event.target.value);
         }}

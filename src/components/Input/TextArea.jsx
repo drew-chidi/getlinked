@@ -14,7 +14,7 @@ const TextArea = ({
     <div className='inline-flex flex-col'>
       <label
         htmlFor={id}
-        className='mb-[3px] inline-block  dark:text-neutral-200'
+        className='mb-1.5 inline-block  dark:text-neutral-200 text-[0.8125rem] md:text-sm'
       >
         {label || ''}
       </label>
@@ -27,7 +27,7 @@ const TextArea = ({
         onKeyUp={() => {
           setFieldTouched(name, true);
         }}
-        className='bg-transparent shadow-input border border-white rounded-[4px] px-6 py-3.5 outline-0 text-white '
+        className='bg-transparent shadow-input border border-white rounded-[4px] px-6 py-3.5 outline-0 text-white text-sm'
         type={type}
         id={id}
         placeholder={placeholder}

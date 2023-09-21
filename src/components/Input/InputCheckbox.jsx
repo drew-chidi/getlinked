@@ -2,7 +2,7 @@ import { Field } from 'formik';
 
 const InputCheckbox = ({ title, name, value }) => {
   return (
-    <div className='flex items-start justify-between gap-2.5 pb-5'>
+    <div className='flex items-start justify-start gap-2.5 pb-5'>
       <Field
         type={'checkbox'}
         name={name}
