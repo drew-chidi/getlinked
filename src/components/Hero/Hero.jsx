@@ -8,7 +8,7 @@ import Button from '../Button/Button';
 const Hero = () => {
   return (
     <section id='hero'>
-      <div className='text-center px-6 xs:px-9 pt-8 mb-0 w-full'>
+      <div className='text-center pt-8 mb-0 w-full px-6 xs:px-9 sm:px-14 md:px-16 2xl:px-28 '>
         <div className='relative inline-flex justify-center tab:justify-end tab:flex tab:mb-10'>
           <p className='font-bold italic tab:text-4xl'>
             Igniting a Revolution in HR Innovation

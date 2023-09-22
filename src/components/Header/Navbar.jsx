@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <div className=''>
-      <div className='fixed z-40 top-0 left-0 right-0 bg-[#150E28] px-12 pt-[34px] pb-6 flex justify-between items-center border-b border-[rgb(255_255_255/0.18)]'>
+      <div className='fixed z-40 top-0 left-0 right-0 bg-[#150E28] px-12 sm:px-14 md:px-16 lg:px-24 2xl:px-28 pt-[34px] pb-6 flex justify-between items-center border-b border-[rgb(255_255_255/0.18)]'>
         {/* Company Logo */}
         <div>
           <NavLink className={'text-white font-bold'} to={'/'}>
