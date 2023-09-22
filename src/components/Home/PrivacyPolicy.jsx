@@ -1,24 +1,27 @@
 import { BiSolidCheckCircle } from 'react-icons/bi';
+import Button from '../Button/Button';
 
 const PrivacyPolicy = () => {
   return (
     <div>
       <div className=''>
         <div className='flex justify-center gap-2.5 lg:gap-4 flex-col items-center text-center mt-[58px]'>
-          <h2 className='text-xl font-bold leading-[26.6px]'>
+          <h2 className='text-xl font-bold leading-[26.6px] tab:text-[2rem]'>
             <span>Privacy Policy and</span>
             <br />
             <span className='text-purple-50'>Terms</span>
           </h2>
-          <p className='text-sm'>Last updated on September 12, 2023</p>
+          <p className='text-sm text-[rgb(255_255_255/0.75)]'>
+            Last updated on September 12, 2023
+          </p>
         </div>
         {/* Policies */}
-        <div>
-          <p>
+        <div className='text-center mt-7'>
+          <p className='text-sm mb-[30px] tab:mb-16'>
             Below are our privacy & policy, which outline a lot of goodies. it’s
             our aim to always take of our participant
           </p>
-          <div>
+          <div className='border border-purple-50 rounded-[5px] px-3.5 tab:px-10 xl:px-[72px] py-11 tab:py-14 xl:py-[59px]'>
             <p>
               At getlinked tech Hackathon 1.0, we value your privacy and are
               committed to protecting your personal information. This Privacy
@@ -47,8 +50,9 @@ const PrivacyPolicy = () => {
                 </p>
               </div>
             </div>
+            {/* Button Here */}
+            <Button>Read More</Button>
           </div>
-          {/* Button Here */}
         </div>
       </div>
     </div>
