@@ -15,7 +15,7 @@ const index = () => {
       <div>
         <Hero />
       </div>
-      <Divider />
+      <Divider className={'mb-7 tab:mb-[62px]'} />
       <div className='px-7'>
         <Introduction />
       </div>
@@ -31,6 +31,7 @@ const index = () => {
       <div className='px-7'>
         <Faq />
       </div>
+      <Divider className={'mb-[80px] mt-[48px]'} />
       <div className='px-7'>
         <Timeline />
       </div>

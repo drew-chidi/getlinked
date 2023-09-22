@@ -3,7 +3,7 @@ import Lady from '@/assets/images/lady-sitting.png';
 const Guidelines = () => {
   return (
     <div>
-      <div className='tab:flex tab:flex-row-reserved tab:gap-12 w-full'>
+      <div className='tab:flex tab:flex-row-reverse tab:gap-12 w-full'>
         <div className='w-[75%] mx-auto tab:w-[44.5%] tab:max-w-[664px]'>
           <img src={Lady} alt='rules and guidelines' />
         </div>

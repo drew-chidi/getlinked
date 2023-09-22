@@ -41,7 +41,7 @@ const Hero = () => {
               </p>
               <Button>Register</Button>
             </div>
-            <div className='font-unica flex gap-4 justify-center mt-3.5 tab:justify-start xl:mt-[77px] tab:mt-14'>
+            <div className='font-unica flex gap-4 justify-center mt-3.5 tab:justify-start xl:mt-[77px] tab:mt-14 tab:mb-14 xl:mb-24'>
               <div className=''>
                 <span className='text-5xl leading-[63.84px]'>00</span>
                 <span className='text-sm font-sans'>H</span>
