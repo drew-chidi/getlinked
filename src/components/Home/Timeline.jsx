@@ -3,7 +3,7 @@ import { timeline } from '@/content';
 const Timeline = () => {
   return (
     <section id='timeline'>
-      <div className=''>
+      <div className='pb-[72px]'>
         <div className='flex flex-col justify-center gap-5 lg:gap-4 items-center text-center mt-[58px]'>
           <h2 className='text-xl font-bold leading-[26.6px] tab:text-[2rem]'>
             Timeline
@@ -56,7 +56,7 @@ const Timeline = () => {
               <div className='inline-flex justify-center flex-col items-center gap-2 w-auto'>
                 <div className='h-[77px] w-[2px] bg-purple-50'></div>
                 <p
-                  className='rounded-full inline-flex justify-center items-center text-xs w-[19.32px] h-[19.32px]'
+                  className='rounded-full inline-flex justify-center items-center text-2xl w-[53px] h-[53px]'
                   style={{
                     background:
                       'linear-gradient(270deg, #903AFF 0%, #D434FE 100%)',
