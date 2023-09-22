@@ -7,6 +7,7 @@ import Timeline from '@/components/Home/Timeline';
 import Prizes from '@/components/Home/Prizes';
 import PartnersAndSponsors from '@/components/Home/PartnersAndSponsors';
 import PrivacyPolicy from '@/components/Home/PrivacyPolicy';
+import Divider from '@/components/Divider/Divider';
 
 const index = () => {
   return (
@@ -14,15 +15,19 @@ const index = () => {
       <div>
         <Hero />
       </div>
+      <Divider />
       <div className='px-7'>
         <Introduction />
       </div>
+      <Divider className={'mt-16'} />
       <div className='px-7'>
         <Guidelines />
       </div>
+      <Divider className={'mb-[74px]'} />
       <div className='px-7'>
         <JudgingCriteria />
       </div>
+      <Divider className={'mb-[60px] mt-[60px]'} />
       <div className='px-7'>
         <Faq />
       </div>

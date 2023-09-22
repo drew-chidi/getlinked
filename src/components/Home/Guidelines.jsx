@@ -3,12 +3,12 @@ import Lady from '@/assets/images/lady-sitting.png';
 const Guidelines = () => {
   return (
     <div>
-      <div className=''>
-        <div className='w-[75%] mx-auto'>
+      <div className='tab:flex tab:flex-row-reserved tab:gap-12 w-full'>
+        <div className='w-[75%] mx-auto tab:w-[44.5%] tab:max-w-[664px]'>
           <img src={Lady} alt='rules and guidelines' />
         </div>
-        <div className='flex justify-center gap-2.5 lg:gap-4 flex-col items-center text-center mt-[58px]'>
-          <h2 className='text-xl font-bold leading-[26.6px]'>
+        <div className='tab:w-[55.5%] flex justify-center gap-2 lg:gap-4 flex-col items-center text-center mt-2.5 tab:mt-0 tab:text-left tab:items-start'>
+          <h2 className='text-xl font-bold leading-[26.6px] tab:text-[2rem]'>
             <span>Rules and</span>
             <br />
             <span className='text-purple-50'>Guidelines</span>

@@ -25,6 +25,8 @@ export default {
       },
       screens: {
         tab: '960px',
+        xs: '390px',
+        '2xl': '1440px',
       },
     },
   },

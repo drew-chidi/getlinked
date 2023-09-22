@@ -12,8 +12,9 @@ const Navbar = () => {
   };
 
   return (
-    <div>
-      <div className='px-12 pt-[34px] pb-6 flex justify-between items-center border-b border-[rgb(255_255_255/0.18)]'>
+    <div className=''>
+      <div className='fixed z-40 top-0 left-0 right-0 bg-[#150E28] px-12 pt-[34px] pb-6 flex justify-between items-center border-b border-[rgb(255_255_255/0.18)]'>
+        {/* Company Logo */}
         <div>
           <NavLink className={'text-white font-bold'} to={'/'}>
             get<span className={'text-[#D434FE] '}>linked</span>
@@ -47,7 +48,7 @@ const Navbar = () => {
       </div>
       {/* Mobile Menu */}
       {showMobileNav && (
-        <div className='py-9 px-11 tab:hidden absolute bg-[#150E28] w-full min-h-screen top-0 z-50'>
+        <div className='py-9 px-11 tab:hidden fixed bg-[#150E28] w-full min-h-screen top-0 z-50'>
           <div
             className='flex justify-end mb-14'
             onClick={() => setShowMobileNav(false)}

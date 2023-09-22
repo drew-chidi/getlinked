@@ -8,10 +8,10 @@ const Layout = ({ children }) => {
   const pathname = location?.pathname;
   return (
     <div className='relative'>
-      <header className=''>
+      <header className='w-full'>
         <Navbar />
       </header>
-      <div className=''>
+      <div className='mt-[117px]'>
         <main className=''>{children}</main>
       </div>
       <footer>{pathname === '/' ? <Footer /> : null}</footer>
