@@ -1,4 +1,4 @@
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AiOutlineClose } from 'react-icons/ai';
 import Button from '../Button/Button';
 import Menu from '@/assets/icons/menu.svg';

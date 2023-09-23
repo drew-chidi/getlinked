@@ -7,9 +7,21 @@ export default {
         input: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
         sm: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
       },
+      backgroundImage: {
+        'purple-lens': "url('/src/assets/images/purple-lens-flare.png')",
+        'double-lens': "url('/src/assets/images/double-lens.png')",
+      },
       backgroundColor: {
         primary:
           'linear-gradient(270deg, #903AFF 0%, #D434FE 56.42%, #FF26B9 99.99%, #FE34B9 100%)',
+      },
+      backgroundPosition: {
+        0.093: '0px -0.093px',
+        7: '-204.25px 7px',
+      },
+      backgroundSize: {
+        109.967: '100% 109.967%',
+        104: '119.817% 104.852%',
       },
       colors: {
         primary:
