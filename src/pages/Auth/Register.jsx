@@ -33,7 +33,7 @@ const Register = () => {
         <div className='max-w-[195px] tab:w-1/2 tab:max-w-[717px] mx-auto'>
           <img src={Designer} alt='' />
         </div>
-        <div className='tab:w-1/2 tab:bg-[rgb(255_255_255/0.03)] tab:p-8'>
+        <div className='tab:shadow-sm tab:w-1/2 tab:bg-[rgb(255_255_255/0.03)] tab:p-8 xl:py-16 xl:px-[90px]'>
           <div>
             <div className='mb-[7px] flex items-end gap-1.5'>
               <p className='text-xs'>Be part of this movement!</p>

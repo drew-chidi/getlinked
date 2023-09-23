@@ -48,7 +48,7 @@ const RegisterForm = ({ onSubmit }) => {
   };
 
   return (
-    <div className='shadow-sm'>
+    <div className=''>
       <Formik
         onSubmit={handleSubmit}
         validationSchema={RegisterSchema}
@@ -145,8 +145,10 @@ const RegisterForm = ({ onSubmit }) => {
               />
             </div>
             {/* button here */}
-            <div className='text-center'>
-              <Button type='submit'>Submit</Button>
+            <div className='text-center tab:flex tab:w-full'>
+              <Button type='submit' className='tab:w-full'>
+                Submit
+              </Button>
             </div>
           </Form>
         )}
