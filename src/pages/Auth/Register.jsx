@@ -26,7 +26,7 @@ const Register = () => {
   };
 
   return (
-    <div className='px-5 xs:px-12 pt-12 pb-9 -mt-[117px] md:mt-0'>
+    <div className='px-5 xs:px-12 pt-12 pb-9 -mt-[117px] tab:mt-0'>
       <SuccessfulEntryModal open={showModal} closeModal={handleCloseModal} />
       <div className='tab:flex tab:items-center'>
         <div className='max-w-[195px] tab:w-1/2 tab:max-w-[717px] mx-auto'>

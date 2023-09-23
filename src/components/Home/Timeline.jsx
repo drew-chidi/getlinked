@@ -1,8 +1,32 @@
 import { timeline } from '@/content';
+import { motion } from 'framer-motion';
 
+const containerVariant = {
+  hidden: {
+    y: 10,
+    opacity: 0,
+  },
+
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: 'spring',
+      bounce: 0.4,
+      duration: 3,
+      delay: 0.3,
+    },
+  },
+};
 const Timeline = () => {
   return (
-    <section id='timeline'>
+    <motion.section
+      id='timeline'
+      initial={'hidden'}
+      whileInView={'visible'}
+      viewport={{ once: true, amount: 0.1 }}
+      variants={containerVariant}
+    >
       <div className='pb-[72px]'>
         <div className='flex flex-col justify-center gap-5 lg:gap-4 items-center text-center mt-[58px]'>
           <h2 className='text-xl font-bold leading-[26.6px] tab:text-[2rem]'>
@@ -70,7 +94,7 @@ const Timeline = () => {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

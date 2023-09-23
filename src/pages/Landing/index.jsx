@@ -35,7 +35,7 @@ const index = () => {
       <div className='px-7 sm:px-14 md:px-16 lg:px-24 2xl:px-28 '>
         <Timeline />
       </div>
-      <div className='px-7 sm:px-14 md:px-16 lg:px-24 2xl:px-28  bg-double-lens   bg-blend-color-burn bg-0.093 bg-109.967 '>
+      <div className='px-7 sm:px-14 md:px-16 lg:px-24 2xl:px-28  tab:bg-double-lens  tab:bg-blend-color-burn bg-0.093 bg-109.967 '>
         <Prizes />
       </div>
       <div className='px-7 sm:px-14 md:px-16 lg:px-24 2xl:px-28 '>

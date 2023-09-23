@@ -7,7 +7,7 @@ const PrivacyPolicy = () => {
   return (
     <div className='pb-[83px]'>
       <div className='tab:flex tab:gap-12 items-center'>
-        <div className='tab:w-1/2  bg-purple-lens bg-7 bg-104 bg-blend-hard-light'>
+        <div className='tab:w-1/2  tab:bg-purple-lens bg-7 bg-104 tab:bg-blend-hard-light'>
           <div className='flex justify-center gap-2.5 tab:gap-4 flex-col items-center text-center tab:items-start tab:text-start'>
             <h2 className='text-xl font-bold leading-[26.6px] tab:text-[2rem]'>
               <span>Privacy Policy and</span>

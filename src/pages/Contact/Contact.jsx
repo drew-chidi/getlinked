@@ -1,11 +1,48 @@
 import { GrInstagram } from 'react-icons/gr';
 import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 import ContactForm from '@/components/Forms/ContactForm';
-import { useState } from 'react';
 import { contactUs } from '@/services/contactApi';
 import toast from 'react-hot-toast';
+
+const containerVariant = {
+  hidden: {
+    y: 100,
+    opacity: 0,
+  },
+
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: 'spring',
+      bounce: 0.4,
+      duration: 3,
+      delay: 0.3,
+    },
+  },
+};
+
+const leftVariant = {
+  hidden: {
+    y: 10,
+    opacity: 0,
+  },
+
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: 'spring',
+      bounce: 0.4,
+      duration: 3,
+      delay: 0.3,
+    },
+  },
+};
 
 const Contact = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -23,9 +60,15 @@ const Contact = () => {
     setIsLoading(false);
   };
   return (
-    <section id='contact-page'>
-      <div className='tab:flex tab:gap-20 tab:items-center tab:justify-center px-5 xs:px-12 pt-12 pb-9 -mt-[117px] md:mt-0'>
-        <div className='hidden tab:block'>
+    <motion.section
+      id='contact-page'
+      initial={'hidden'}
+      whileInView={'visible'}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ staggerChildren: 0.5 }}
+    >
+      <div className='tab:flex tab:gap-20 tab:items-center tab:justify-center px-5 xs:px-12 pt-12 pb-9 -mt-[117px] tab:mt-0'>
+        <motion.div className='hidden tab:block' variants={leftVariant}>
           <div>
             <h2 className='text-purple-50 text-[2rem] font-semibold'>
               Get in touch
@@ -60,8 +103,11 @@ const Contact = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className='tab:shadow-sm tab:w-1/2 tab:bg-[rgb(255_255_255/0.03)] tab:p-8 xl:py-16 xl:px-[90px]'>
+        </motion.div>
+        <motion.div
+          className='tab:shadow-sm tab:w-1/2 tab:bg-[rgb(255_255_255/0.03)] tab:p-8 xl:py-16 xl:px-[90px]'
+          variants={containerVariant}
+        >
           <h1 className='text-purple-50 font-semibold text-xl mb-6'>
             Questions or need assistance? <br />
             Let us know about it
@@ -80,9 +126,9 @@ const Contact = () => {
               <FaLinkedinIn />
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

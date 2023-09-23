@@ -10,19 +10,17 @@ const Layout = ({ children }) => {
   const location = useLocation();
   const pathname = location?.pathname;
 
-  // Function to update the display based on screen width
   const updateDisplay = () => {
     if (pathname === '/') {
       // Always show Navbar on the index page
       setShowNavbar(true);
     } else {
       // Show Navbar for larger screens and Navback for smaller screens
-      setShowNavbar(window.innerWidth >= 768);
+      setShowNavbar(window.innerWidth >= 960);
     }
   };
 
   useEffect(() => {
-    // Initial display setup
     updateDisplay();
 
     // Listen for resize events to update the display
