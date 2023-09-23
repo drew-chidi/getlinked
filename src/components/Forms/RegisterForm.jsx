@@ -41,45 +41,49 @@ const RegisterForm = () => {
         }) => (
           <Form>
             <div className='flex flex-col gap-6'>
-              <InputBox
-                label={"Team's Name"}
-                placeholder={'Enter the name of your group'}
-                id={'team_name'}
-                name={'team_name'}
-                value={values?.team_name}
-                isValid={values?.team_name && !errors?.team_name}
-                setFieldTouched={setFieldTouched}
-              />
-              <InputBox
-                label={'Phone'}
-                placeholder={'Enter your phone number'}
-                id={'phone'}
-                name={'phone'}
-                value={values?.phone}
-                isValid={values?.phone && !errors?.phone}
-                setFieldTouched={setFieldTouched}
-              />
-              <InputBox
-                label={'Email'}
-                placeholder={'Enter your email address'}
-                type={'email'}
-                id={'email'}
-                name={'email'}
-                value={values?.email}
-                isValid={values?.email && !errors?.email}
-                setFieldTouched={setFieldTouched}
-              />
-              <InputBox
-                label={'Project Topic'}
-                placeholder={'What is your group project topic?'}
-                id={'topic'}
-                name={'topic'}
-                value={values?.topic}
-                isValid={values?.topic && !errors?.topic}
-                setFieldTouched={setFieldTouched}
-              />
-              <div className='flex gap-5 w-full'>
-                <div className='w-[64%]'>
+              <div className='flex flex-col gap-6 xl:grid xl:grid-cols-2'>
+                <InputBox
+                  label={"Team's Name"}
+                  placeholder={'Enter the name of your group'}
+                  id={'team_name'}
+                  name={'team_name'}
+                  value={values?.team_name}
+                  isValid={values?.team_name && !errors?.team_name}
+                  setFieldTouched={setFieldTouched}
+                />
+                <InputBox
+                  label={'Phone'}
+                  placeholder={'Enter your phone number'}
+                  id={'phone'}
+                  name={'phone'}
+                  value={values?.phone}
+                  isValid={values?.phone && !errors?.phone}
+                  setFieldTouched={setFieldTouched}
+                />
+              </div>
+              <div className='flex flex-col gap-6 xl:grid xl:grid-cols-2'>
+                <InputBox
+                  label={'Email'}
+                  placeholder={'Enter your email address'}
+                  type={'email'}
+                  id={'email'}
+                  name={'email'}
+                  value={values?.email}
+                  isValid={values?.email && !errors?.email}
+                  setFieldTouched={setFieldTouched}
+                />
+                <InputBox
+                  label={'Project Topic'}
+                  placeholder={'What is your group project topic?'}
+                  id={'topic'}
+                  name={'topic'}
+                  value={values?.topic}
+                  isValid={values?.topic && !errors?.topic}
+                  setFieldTouched={setFieldTouched}
+                />
+              </div>
+              <div className='flex gap-5 w-full xl:grid xl:grid-cols-2'>
+                <div className='w-[64%] tab:w-full'>
                   <InputSelect
                     label={'Category'}
                     placeholder={'Select your category?'}
@@ -93,7 +97,7 @@ const RegisterForm = () => {
                     setOption={handleOption}
                   />
                 </div>
-                <div className='w-[36%]'>
+                <div className='w-[36%] tab:w-full'>
                   <InputSelect
                     label={'Group Size'}
                     placeholder={'Select'}

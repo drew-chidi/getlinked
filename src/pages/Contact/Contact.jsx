@@ -6,7 +6,7 @@ import ContactForm from '@/components/Forms/ContactForm';
 
 const Contact = () => {
   return (
-    <div className='px-12 pt-12 pb-9'>
+    <div className='px-7 xs:px-12 pt-12 pb-9 -mt-[117px] md:mt-0'>
       <h1 className='text-purple-50 font-semibold text-xl mb-6'>
         Questions or need assistance? <br />
         Let us know about it

@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { AiOutlineClose } from 'react-icons/ai';
 import Button from '../Button/Button';
 import Menu from '@/assets/icons/menu.svg';
@@ -6,6 +6,8 @@ import { useState } from 'react';
 
 const Navbar = () => {
   const [showMobileNav, setShowMobileNav] = useState(false);
+  const location = useLocation();
+  const path = location.pathname;
 
   const handleMobileMenu = () => {
     setShowMobileNav((o) => !o);
@@ -28,18 +30,20 @@ const Navbar = () => {
                 <NavLink to='#timeline'>Timeline</NavLink>
               </li>
               <li>
-                <NavLink to='#timeline'>Overview</NavLink>
+                <NavLink to='#overview'>Overview</NavLink>
               </li>
               <li>
-                <NavLink to='#timeline'>FAQs</NavLink>
+                <NavLink to='#faqs'>FAQs</NavLink>
               </li>
               <li>
-                <NavLink to='#timeline'>Contact</NavLink>
+                <NavLink to='/contact'>Contact</NavLink>
               </li>
             </ul>
           </nav>
           <div>
-            <Button>Register</Button>
+            <Button>
+              <Link to='/register'>Register</Link>
+            </Button>
           </div>
         </div>
         <button onClick={handleMobileMenu} className='tab:hidden'>
@@ -66,24 +70,26 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to='#timeline' onClick={handleMobileMenu}>
+                <NavLink to='#overtime' onClick={handleMobileMenu}>
                   Overview
                 </NavLink>
               </li>
               <li>
-                <NavLink to='#timeline' onClick={handleMobileMenu}>
+                <NavLink to='#faqs' onClick={handleMobileMenu}>
                   FAQs
                 </NavLink>
               </li>
               <li>
-                <NavLink to='#timeline' onClick={handleMobileMenu}>
+                <NavLink to='/contact' onClick={handleMobileMenu}>
                   Contact
                 </NavLink>
               </li>
             </ul>
           </nav>
           <div className='mt-7'>
-            <Button>Register</Button>
+            <Button>
+              <Link to='/register'>Register</Link>
+            </Button>
           </div>
         </div>
       )}
