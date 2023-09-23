@@ -44,7 +44,14 @@ const RegisterForm = ({ onSubmit }) => {
     setOption(value);
   };
   const handleSubmit = (formData) => {
-    onSubmit(formData);
+    const { category } = formData;
+    // Find the option object with a matching name
+    const matchingOption = categories.find(
+      (option) => option.name === category
+    );
+    // If a matching option is found, update the category property with its id
+    const formattedData = { ...formData, category: matchingOption.id };
+    onSubmit(formattedData);
   };
 
   return (
