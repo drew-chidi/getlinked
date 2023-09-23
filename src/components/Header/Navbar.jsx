@@ -84,7 +84,7 @@ const Navbar = () => {
               </li>
               <li>
                 <AnchorLink
-                  href='#overtime'
+                  href='#overview'
                   onClick={handleMobileMenu}
                   className='cursor-pointer'
                 >
