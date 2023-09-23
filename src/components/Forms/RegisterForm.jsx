@@ -8,22 +8,31 @@ import InputSelect from '../Input/InputSelect';
 import InputCheckbox from '../Input/InputCheckbox';
 import Button from '../Button/Button';
 import { useState } from 'react';
+import SuccessfulEntryModal from '../Modal/SuccessfulEntryModal';
 
 const categoryOptions = ['Category 1', 'Category 2'];
 const groupSize = ['1', '2'];
 
 const RegisterForm = () => {
   const [, setOption] = useState('');
+  const [showModal, setShowModal] = useState(false);
 
   const handleOption = (value) => {
     setOption(value);
   };
   const handleSubmit = () => {
     console.log('eueui');
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
   };
 
   return (
-    <div>
+    <div className='shadow-sm'>
+      <SuccessfulEntryModal open={showModal} closeModal={handleCloseModal} />
+
       <Formik
         onSubmit={handleSubmit}
         validationSchema={RegisterSchema}

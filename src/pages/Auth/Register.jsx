@@ -5,7 +5,7 @@ import Designer from '@/assets/images/designer-showing-thumbs-up.png';
 
 const Register = () => {
   return (
-    <div className='px-7 xs:px-12 pt-12 pb-9 -mt-[117px] md:mt-0'>
+    <div className='px-5 xs:px-12 pt-12 pb-9 -mt-[117px] md:mt-0'>
       <div className='tab:flex tab:items-center'>
         <div className='max-w-[195px] tab:w-1/2 tab:max-w-[717px] mx-auto'>
           <img src={Designer} alt='' />
