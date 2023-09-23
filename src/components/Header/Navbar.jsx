@@ -3,11 +3,10 @@ import { AiOutlineClose } from 'react-icons/ai';
 import Button from '../Button/Button';
 import Menu from '@/assets/icons/menu.svg';
 import { useState } from 'react';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 const Navbar = () => {
   const [showMobileNav, setShowMobileNav] = useState(false);
-  const location = useLocation();
-  const path = location.pathname;
 
   const handleMobileMenu = () => {
     setShowMobileNav((o) => !o);
@@ -27,22 +26,32 @@ const Navbar = () => {
           <nav>
             <ul className='flex items-center md:gap-8 lg:gap-14'>
               <li>
-                <NavLink to='#timeline'>Timeline</NavLink>
+                <AnchorLink href='#timeline' className='cursor-pointer'>
+                  Timeline
+                </AnchorLink>
               </li>
               <li>
-                <NavLink to='#overview'>Overview</NavLink>
+                <AnchorLink href='#overview' className='cursor-pointer'>
+                  Overview
+                </AnchorLink>
               </li>
               <li>
-                <NavLink to='#faqs'>FAQs</NavLink>
+                <AnchorLink href='#faqs' className='cursor-pointer'>
+                  FAQs
+                </AnchorLink>
               </li>
               <li>
-                <NavLink to='/contact'>Contact</NavLink>
+                <NavLink to='/contact' className='cursor-pointer'>
+                  Contact
+                </NavLink>
               </li>
             </ul>
           </nav>
           <div>
             <Button>
-              <Link to='/register'>Register</Link>
+              <Link to='/register' className='cursor-pointer'>
+                Register
+              </Link>
             </Button>
           </div>
         </div>
@@ -65,22 +74,38 @@ const Navbar = () => {
           <nav>
             <ul className='flex flex-col gap-6 sm:gap-8 text-lg'>
               <li>
-                <NavLink to='#timeline' onClick={handleMobileMenu}>
+                <AnchorLink
+                  href='#timeline'
+                  onClick={handleMobileMenu}
+                  className='cursor-pointer'
+                >
                   Timeline
-                </NavLink>
+                </AnchorLink>
               </li>
               <li>
-                <NavLink to='#overtime' onClick={handleMobileMenu}>
+                <AnchorLink
+                  href='#overtime'
+                  onClick={handleMobileMenu}
+                  className='cursor-pointer'
+                >
                   Overview
-                </NavLink>
+                </AnchorLink>
               </li>
               <li>
-                <NavLink to='#faqs' onClick={handleMobileMenu}>
+                <AnchorLink
+                  href='#faqs'
+                  onClick={handleMobileMenu}
+                  className='cursor-pointer'
+                >
                   FAQs
-                </NavLink>
+                </AnchorLink>
               </li>
               <li>
-                <NavLink to='/contact' onClick={handleMobileMenu}>
+                <NavLink
+                  to='/contact'
+                  onClick={handleMobileMenu}
+                  className='cursor-pointer'
+                >
                   Contact
                 </NavLink>
               </li>
@@ -88,7 +113,9 @@ const Navbar = () => {
           </nav>
           <div className='mt-7'>
             <Button>
-              <Link to='/register'>Register</Link>
+              <Link to='/register' className='cursor-pointer'>
+                Register
+              </Link>
             </Button>
           </div>
         </div>

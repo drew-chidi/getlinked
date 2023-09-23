@@ -41,6 +41,7 @@ const index = () => {
       <div className='px-7 sm:px-14 md:px-16 lg:px-24 2xl:px-28 '>
         <PartnersAndSponsors />
       </div>
+      <Divider className={'hidden tab:block tab:mb-[128px]'} />
       <div className='px-7 sm:px-14 md:px-16 lg:px-24 2xl:px-28 '>
         <PrivacyPolicy />
       </div>

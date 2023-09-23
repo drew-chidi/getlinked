@@ -43,7 +43,7 @@ const Faq = () => {
 
   return (
     <motion.section
-      id='faq'
+      id='faqs'
       initial={'hidden'}
       whileInView={'visible'}
       viewport={{ once: true, amount: 0.1 }}
@@ -76,7 +76,7 @@ const Faq = () => {
                     <span onClick={() => handleAccordion(id)}>
                       <span>
                         <AiOutlinePlus
-                          size={9}
+                          size={22}
                           className={` ${
                             questionId === id ? 'hidden' : 'block'
                           } text-purple-50`}
@@ -93,7 +93,9 @@ const Faq = () => {
                     </span>
                   </div>
                   <p className={` ${questionId === id ? 'block' : 'hidden'}`}>
-                    <span>{answer}</span>
+                    <span className='text-slate-300 text-xs tab:text-sm'>
+                      {answer}
+                    </span>
                   </p>
                 </div>
               );
