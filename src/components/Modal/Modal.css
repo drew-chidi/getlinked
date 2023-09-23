@@ -1,0 +1,17 @@
+.popup-content {
+  max-width: 317px;
+  max-height: 467px;
+  border-radius: '5px';
+  background-color: 'rgba(255, 255, 255, 0.01)';
+  width: 'fit-content';
+  box-shadow: 'none';
+  overflow: scroll;
+  margin: 'auto';
+  height: 80%;
+}
+
+@media (min-width: 960px) {
+  .popup-content {
+    max-width: 699px;
+  }
+}

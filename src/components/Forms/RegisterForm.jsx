@@ -1,4 +1,6 @@
+/* eslint-disable react/prop-types */
 import { Formik, Form } from 'formik';
+import { useEffect } from 'react';
 import InputBox from '../Input/InputBox';
 import {
   RegisterSchema,
@@ -6,48 +8,54 @@ import {
 } from '@/schema/register.schema';
 import InputSelect from '../Input/InputSelect';
 import InputCheckbox from '../Input/InputCheckbox';
-import Button from '../Button/Button';
 import { useState } from 'react';
-import SuccessfulEntryModal from '../Modal/SuccessfulEntryModal';
+import Button from '../Button/Button';
+import { getCategories } from '@/services/categoryApi';
+import toast from 'react-hot-toast';
 
-const categoryOptions = ['Category 1', 'Category 2'];
-const groupSize = ['1', '2'];
+const groupSize = [
+  { id: 1, name: '1' },
+  { id: 2, name: '2' },
+  { id: 3, name: '3' },
+];
 
-const RegisterForm = () => {
+const RegisterForm = ({ onSubmit }) => {
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [, setOption] = useState('');
-  const [showModal, setShowModal] = useState(false);
+
+  const fetchCategories = async () => {
+    setLoading(true);
+    try {
+      let response = await getCategories();
+      setCategories(response);
+    } catch (error) {
+      console.error('Error during registration:', error);
+      toast.error(`Error: ${error.message}`);
+    }
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    fetchCategories();
+  }, []);
 
   const handleOption = (value) => {
     setOption(value);
   };
-  const handleSubmit = () => {
-    console.log('eueui');
-    setShowModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setShowModal(false);
+  const handleSubmit = (formData) => {
+    onSubmit(formData);
   };
 
   return (
     <div className='shadow-sm'>
-      <SuccessfulEntryModal open={showModal} closeModal={handleCloseModal} />
-
       <Formik
         onSubmit={handleSubmit}
         validationSchema={RegisterSchema}
         enableReinitialize
         initialValues={initialRegisterValues}
       >
-        {({
-          values,
-          setFieldTouched,
-          isValid,
-          setFieldValue,
-          errors,
-          handleSubmit,
-          ...formik
-        }) => (
+        {({ values, setFieldTouched, errors, handleSubmit }) => (
           <Form>
             <div className='flex flex-col gap-6'>
               <div className='flex flex-col gap-6 xl:grid xl:grid-cols-2'>
@@ -101,9 +109,10 @@ const RegisterForm = () => {
                     value={values?.category}
                     isValid={values?.category && !errors?.category}
                     setFieldTouched={setFieldTouched}
-                    options={categoryOptions}
+                    options={categories}
                     handleSubmit={handleSubmit}
                     setOption={handleOption}
+                    loading={loading}
                   />
                 </div>
                 <div className='w-[36%] tab:w-full'>
@@ -116,6 +125,7 @@ const RegisterForm = () => {
                     isValid={values?.group_size && !errors?.group_size}
                     setFieldTouched={setFieldTouched}
                     options={groupSize}
+                    loading={loading}
                   />
                 </div>
               </div>

@@ -7,6 +7,7 @@ export const initialRegisterValues = {
   topic: '',
   category: '',
   group_size: '',
+  terms: false,
 };
 
 export const RegisterSchema = Yup.object().shape({
@@ -33,4 +34,7 @@ export const RegisterSchema = Yup.object().shape({
     .integer('Group size should be a whole number')
     .min(1, 'Group size should be at least 1')
     .required('Group size is required'),
+  terms: Yup.boolean()
+    .oneOf([true], 'You must agree to the terms and conditions to register')
+    .required('You must agree to the terms and conditions to register'),
 });

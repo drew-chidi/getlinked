@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Field, ErrorMessage } from 'formik';
 
 const InputSelect = ({
@@ -6,15 +7,14 @@ const InputSelect = ({
   id,
   name,
   options,
-  setOption,
   value,
-  ...rest
+  loading,
 }) => {
   return (
     <div className='flex flex-col'>
       <label
         htmlFor={id}
-        className='text-sm lg:text-base mb-1.5 inline-block  dark:text-neutral-200  text-[#575555]'
+        className='text-sm lg:text-base mb-1.5 inline-block dark:text-neutral-200 text-[#575555]'
       >
         {label || ''}
       </label>
@@ -22,21 +22,23 @@ const InputSelect = ({
         as='select'
         id={id}
         name={name}
-        value={value}
-        {...rest}
+        value={value} // Value should be directly passed from Formik
         className='border border-input rounded-md px-[13px] py-3 outline-0 text-white leading-8 bg-transparent text-sm'
-        onChange={(event) => {
-          setOption && setOption(event.target.value);
-        }}
       >
-        <option value='' className='text-[#575555] '>
+        <option value='' className='text-[#575555]'>
           {placeholder || 'Select an option'}
         </option>
-        {options.map((option) => (
-          <option key={option} value={option} className='text-[#575555]'>
-            {option}
+        {!loading ? (
+          options.map(({ id, name }) => (
+            <option key={id} value={name} className='text-[#575555]'>
+              {name}
+            </option>
+          ))
+        ) : (
+          <option className='text-[#140D27] text-center py-4'>
+            Loading...
           </option>
-        ))}
+        )}
       </Field>
       <ErrorMessage
         name={name}
