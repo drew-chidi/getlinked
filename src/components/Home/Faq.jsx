@@ -1,8 +1,38 @@
+import { motion } from 'framer-motion';
+
 import Audience from '@/assets/images/audience-man.png';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { BsDashCircle } from 'react-icons/bs';
 import { faqsContent } from '../../content';
 import { useState } from 'react';
+
+const containerVariant = {
+  hidden: {
+    y: 10,
+    opacity: 0,
+  },
+
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: 'spring',
+      bounce: 0.4,
+      duration: 3,
+      delay: 0.3,
+    },
+  },
+};
+
+const picsVariant = {
+  hover: {
+    scale: 1.1,
+    transition: {
+      duration: 0.3,
+      yoyo: Infinity,
+    },
+  },
+};
 
 const Faq = () => {
   const [questionId, setQuestionId] = useState(null);
@@ -12,7 +42,13 @@ const Faq = () => {
   };
 
   return (
-    <div>
+    <motion.section
+      id='faq'
+      initial={'hidden'}
+      whileInView={'visible'}
+      viewport={{ once: true, amount: 0.1 }}
+      variants={containerVariant}
+    >
       <div className='tab:flex tab:flex-row tab:gap-6 w-full items-center'>
         <div className='tab:w-[45%]'>
           <div className='flex justify-center gap-1.5 lg:gap-4 flex-col items-center text-center mt-[58px] tab:text-left tab:items-start'>
@@ -65,11 +101,14 @@ const Faq = () => {
           </div>
         </div>
         {/* Image */}
-        <div className='w-[85%] max-w-[327px] mx-auto mt-[86px] tab:mt-0 tab:w-[55%] tab:max-w-[741px]'>
+        <motion.div
+          className='w-[85%] max-w-[327px] mx-auto mt-[86px] tab:mt-0 tab:w-[55%] tab:max-w-[741px]'
+          variants={picsVariant}
+        >
           <img src={Audience} alt='rules and guidelines' />
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.section>
   );
 };
 
