@@ -22,7 +22,6 @@ const groupSize = [
 const RegisterForm = ({ onSubmit }) => {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [, setOption] = useState('');
 
   const fetchCategories = async () => {
     setLoading(true);
@@ -40,9 +39,6 @@ const RegisterForm = ({ onSubmit }) => {
     fetchCategories();
   }, []);
 
-  const handleOption = (value) => {
-    setOption(value);
-  };
   const handleSubmit = (formData) => {
     const { category } = formData;
     // Find the option object with a matching name
@@ -118,7 +114,6 @@ const RegisterForm = ({ onSubmit }) => {
                     setFieldTouched={setFieldTouched}
                     options={categories}
                     handleSubmit={handleSubmit}
-                    setOption={handleOption}
                     loading={loading}
                   />
                 </div>
@@ -151,7 +146,6 @@ const RegisterForm = ({ onSubmit }) => {
                 setFieldTouched={setFieldTouched}
               />
             </div>
-            {/* button here */}
             <div className='text-center tab:flex tab:w-full'>
               <Button type='submit' className='tab:w-full'>
                 Submit

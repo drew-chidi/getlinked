@@ -1,13 +1,58 @@
+import { motion } from 'framer-motion';
+
 import Chain from '@/assets/images/chain.png';
 import Blast from '@/assets/images/blast.png';
 import Man from '@/assets/images/man-wearing-glasses.png';
 import Globe from '@/assets/images/connected-globe.png';
 import Line from '@/assets/images/line.svg';
 import Button from '../Button/Button';
+import Bulb from '@/assets/images/light-bulb.png';
+
+const containerVariant = {
+  hidden: {
+    y: 100,
+    opacity: 0,
+  },
+
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: 'spring',
+      bounce: 0.4,
+      duration: 3,
+      delay: 0.3,
+    },
+  },
+};
+
+const imageVariant = {
+  hidden: {
+    y: 10,
+    opacity: 0,
+  },
+
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: 'spring',
+      bounce: 0.4,
+      duration: 3,
+      delay: 0.3,
+    },
+  },
+};
 
 const Hero = () => {
   return (
-    <section id='hero'>
+    <motion.section
+      id='hero'
+      initial={'hidden'}
+      whileInView={'visible'}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ staggerChildren: 0.5 }}
+    >
       <div className='text-center pt-8 mb-0 w-full px-6 xs:px-9 sm:px-14 md:px-16 2xl:px-28 '>
         <div className='relative inline-flex justify-center tab:justify-end tab:flex tab:mb-10'>
           <p className='font-bold italic tab:text-4xl'>
@@ -19,8 +64,11 @@ const Hero = () => {
           </p>
         </div>
         <div className='relative flex flex-col gap-3 tab:flex-row w-full'>
-          <div className='tab:w-3/5'>
-            <div className='text-center tab:text-left font-display text-[2rem] md:text-4xl tab:text-6xl xl:text-7xl 2xl:text-[5rem] font-bold mt-14'>
+          <motion.div className='tab:w-3/5' variants={containerVariant}>
+            <div className='relative text-center tab:text-left font-display text-[2rem] md:text-4xl tab:text-6xl xl:text-7xl 2xl:text-[5rem] font-bold mt-14'>
+              <div className='absolute right-[72px] -top-3 w-[18px] tab:w-[53px] h-[26px] tab:h-[73px]'>
+                <img src={Bulb} />
+              </div>
               <p className='leading-normal'>getlinked Tech</p>
               <div className='flex items-center justify-center tab:justify-start'>
                 <p className='leading-normal'>
@@ -55,9 +103,17 @@ const Hero = () => {
                 <span className='text-sm font-sans'>S</span>
               </div>
             </div>
-          </div>
+          </motion.div>
           {/* HERO IMAGE */}
-          <div className='tab:absolute right-0 bottom-0'>
+          <motion.div
+            className='tab:absolute right-0 bottom-0'
+            variants={imageVariant}
+            whileHover={{
+              scale: 1,
+              transition: { duration: 1 },
+            }}
+            whileTap={{ scale: 0.9 }}
+          >
             <div className='relative max-w-[390px] tab:max-w-[480px] mx-auto'>
               {/* Larger image at the bottom */}
               <img
@@ -71,10 +127,10 @@ const Hero = () => {
                 <img src={Globe} alt='Small Image' className='' />
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

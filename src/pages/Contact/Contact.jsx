@@ -3,8 +3,25 @@ import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 
 import ContactForm from '@/components/Forms/ContactForm';
+import { useState } from 'react';
+import { contactUs } from '@/services/contactApi';
+import toast from 'react-hot-toast';
 
 const Contact = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleContactUs = async (formData) => {
+    setIsLoading(true);
+    try {
+      await contactUs(formData);
+      setIsLoading(false);
+    } catch (error) {
+      console.error('Error during registration:', error);
+      toast.error(`Error: ${error.message}`);
+      setIsLoading(false);
+    }
+    setIsLoading(false);
+  };
   return (
     <section id='contact-page'>
       <div className='tab:flex tab:gap-20 tab:items-center tab:justify-center px-5 xs:px-12 pt-12 pb-9 -mt-[117px] md:mt-0'>
@@ -53,7 +70,7 @@ const Contact = () => {
             Email us below to any question related <br />
             to our event
           </p>
-          <ContactForm />
+          <ContactForm loading={isLoading} onSubmit={handleContactUs} />
           <div className='mx-auto text-center flex items-center flex-col gap-[5px] mt-10 tab:hidden'>
             <p className='text-xm text-purple-50'>Share on</p>
             <div className='flex items-center gap-3'>

@@ -48,7 +48,7 @@ export const faqsContent = [
       consider the completeness and robustness of the solution.`,
   },
   {
-    id: 4,
+    id: 3,
     question: "What happens if I don't have an idea for a project?",
     answer:
       'Impact and Relevance: Determine the potential impact of the solution in the real world. Does it address a significant problem, and is it relevant to the target audience? Judges would assess the potential social, economic, or environmental benefits.',

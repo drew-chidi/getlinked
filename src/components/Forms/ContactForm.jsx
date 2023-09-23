@@ -1,10 +1,15 @@
+/* eslint-disable react/prop-types */
 import { Form, Formik } from 'formik';
 import InputBox from '../Input/InputBox';
 import TextArea from '../Input/TextArea';
 import { ContactSchema, initialContactValues } from '@/schema/contact.schema';
+import Button from '../Button/Button';
+import ButtonSpinner from '../Loader/ButtonSpinner';
 
-const ContactForm = () => {
-  const handleSubmit = () => {};
+const ContactForm = ({ loading, onSubmit }) => {
+  const handleSubmit = (formData) => {
+    onSubmit(formData);
+  };
 
   return (
     <div>
@@ -19,19 +24,20 @@ const ContactForm = () => {
             <div className='flex flex-col gap-6'>
               <InputBox
                 label={''}
-                placeholder={"Team's Name"}
-                id={'name'}
-                name={'name'}
-                value={values?.name}
-                isValid={values?.name && !errors?.name}
+                placeholder={'First Name'}
+                id={'first_name'}
+                name={'first_name'}
+                first_name={'first_name'}
+                value={values?.first_name}
+                isValid={values?.first_name && !errors?.first_name}
                 setFieldTouched={setFieldTouched}
               />
               <InputBox
-                placeholder={'Topic'}
-                id={'topic'}
-                name={'topic'}
-                value={values?.topic}
-                isValid={values?.topic && !errors?.topic}
+                placeholder={'Phone'}
+                id={'phone_number'}
+                name={'phone_number'}
+                value={values?.phone_number}
+                isValid={values?.phone_number && !errors?.phone_number}
                 setFieldTouched={setFieldTouched}
               />
               <InputBox
@@ -52,8 +58,12 @@ const ContactForm = () => {
                 isValid={values?.message && !errors?.message}
                 setFieldTouched={setFieldTouched}
               />
+              <div className='text-center tab:flex tab:w-full'>
+                <Button type='submit' className='tab:w-full'>
+                  {loading ? <ButtonSpinner /> : 'Submit'}
+                </Button>
+              </div>
             </div>
-            {/* button here */}
           </Form>
         )}
       </Formik>

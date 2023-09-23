@@ -13,9 +13,8 @@ const Register = () => {
 
   const handleRegister = async (formData) => {
     try {
-      const response = await registerUser(formData);
+      await registerUser(formData);
       setShowModal(true);
-      console.log(response);
     } catch (error) {
       console.error('Error during registration:', error);
       toast.error(`Error: ${error.message}`);
